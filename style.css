@@ -224,3 +224,54 @@ display:none;
 }
 
 }
+
+/* Lightning background effect */
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+body::before {
+
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(88,101,242,0.25) 0%,
+            transparent 35%
+        );
+
+    animation: lightning 6s infinite;
+    pointer-events: none;
+    z-index: -1;
+
+}
+
+
+@keyframes lightning {
+
+    0%, 90%, 100% {
+        opacity:0;
+    }
+
+    92% {
+        opacity:1;
+    }
+
+    94% {
+        opacity:0.2;
+    }
+
+    96% {
+        opacity:0.8;
+    }
+
+}
